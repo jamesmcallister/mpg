@@ -1,0 +1,45 @@
+{
+  "name": "mpg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmcallister/mpg.git"
+  },
+  "keywords": [],
+  "author": "James McAllister",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesmcallister/mpg/issues"
+  },
+  "homepage": "https://github.com/jamesmcallister/mpg#readme",
+  "scripts": {
+    "start:frontend": "npm run build && npm run only:start:frontend",
+    "only:start:frontend": "node ./built/frontend/server.js",
+    "test": "npm run build && wdio",
+    "build": "npm run clean && tsc",
+    "dev:server": "npm run clean && tsc --watch",
+    "clean": "rm -rf ./built"
+  },
+  "devDependencies": {
+    "@types/chai": "4.0.1",
+    "@types/mocha": "2.2.41",
+    "@types/webdriverio": "4.8.0",
+    "chai": "4.0.2",
+    "eslint": "4.1.1",
+    "eslint-config-prettier": "2.2.0",
+    "eslint-plugin-prettier": "2.1.2",
+    "eslint-plugin-react": "7.1.0",
+    "express": "4.15.3",
+    "fibers": "^2.0.0",
+    "jest": "20.0.4",
+    "mocha": "3.4.2",
+    "prettier": "1.5.2",
+    "prettier-eslint": "6.4.1",
+    "typescript": "^2.4.1",
+    "wdio-mocha-framework": "0.5.10",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "webdriverio": "4.8.0"
+  }
+}

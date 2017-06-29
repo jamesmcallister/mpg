@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "presets": [
+      "es2016",
+      "react"
+    ],
+    "ecmaFeatures": {
+      "modules": true
+    }
+  },
+  "rules": {
+    "curly": "error",
+    "no-inner-declarations": "off",
+    "no-var": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "strict": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ]
+  }
+}

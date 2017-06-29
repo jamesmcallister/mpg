@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "jsx": "react",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "built",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "types": [
+      "webdriverio",
+      "mocha"
+    ]
+  },
+  "include": [
+    "backend/**/*",
+    "tests/**/*",
+    "frontend/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
