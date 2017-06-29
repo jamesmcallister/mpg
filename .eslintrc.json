@@ -6,6 +6,7 @@
     "mocha": true
   },
   "plugins": [
+    "react",
     "prettier"
   ],
   "parserOptions": {
@@ -15,7 +16,8 @@
       "react"
     ],
     "ecmaFeatures": {
-      "modules": true
+      "modules": true,
+      "jsx": true
     }
   },
   "rules": {

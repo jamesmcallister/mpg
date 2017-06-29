@@ -17,10 +17,14 @@
   },
   "include": [
     "backend/**/*",
-    "tests/**/*",
-    "frontend/**/*"
+    "tests/**/*"
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "include": [
+      "frontend/**/*"
+    ]
+  }
 }
