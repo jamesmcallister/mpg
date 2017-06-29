@@ -15,7 +15,9 @@
   },
   "homepage": "https://github.com/jamesmcallister/mpg#readme",
   "scripts": {
+    "start:backend": "npm run build && npm run only:start:backend",
     "start:frontend": "npm run build && npm run only:start:frontend",
+    "only:start:backend": "node ./built/backend/server.js",
     "only:start:frontend": "node ./built/frontend/server.js",
     "test": "npm run build && wdio",
     "build": "npm run clean && tsc",
@@ -30,16 +32,24 @@
     "eslint": "4.1.1",
     "eslint-config-prettier": "2.2.0",
     "eslint-plugin-prettier": "2.1.2",
-    "eslint-plugin-react": "7.1.0",
-    "express": "4.15.3",
+    "eslint-plugin-react": "^7.1.0",
     "fibers": "^2.0.0",
     "jest": "20.0.4",
     "mocha": "3.4.2",
     "prettier": "1.5.2",
     "prettier-eslint": "6.4.1",
-    "typescript": "^2.4.1",
+    "typescript": "2.4.1",
     "wdio-mocha-framework": "0.5.10",
     "wdio-selenium-standalone-service": "0.0.9",
     "webdriverio": "4.8.0"
+  },
+  "dependencies": {
+    "body-parser": "1.17.2",
+    "cors": "2.8.3",
+    "express": "4.15.3",
+    "graphql": "0.10.3",
+    "graphql-server-express": "0.9.0",
+    "graphql-tag": "1.3.1",
+    "graphql-tools": "1.0.0"
   }
 }

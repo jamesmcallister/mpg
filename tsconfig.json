@@ -9,6 +9,7 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
+    "allowJs": true,
     "types": [
       "webdriverio",
       "mocha"
