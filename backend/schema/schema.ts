@@ -4,15 +4,16 @@ import { resolvers } from './resolvers'
 const typeDefs = `
 type mpg {
    id: ID!
-   miles: Int
-   litres: Int
-   mpg: Int
+   date: String
+   miles: String
+   litres: String
+   totalmpg: String
 }
 type Query {
    mpg: [mpg]
 }
 type Mutation {
-  addMpg(miles: Int!, litres: Int): mpg
+  addMpg(date: String!, miles: String!, litres: String!, totalmpg: String!): mpg
 }
 `
 export const schema = makeExecutableSchema({ typeDefs, resolvers })

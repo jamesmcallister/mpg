@@ -1,4 +1,3 @@
-'use strict'
 const config = require('./built/tests/end-to-end/config')
 const { spawn } = require('child_process')
 let frontendProcess

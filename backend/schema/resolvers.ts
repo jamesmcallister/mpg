@@ -1,13 +1,17 @@
 const mpg: [{}] = [
   {
     id: 1,
-    miles: '480',
-    litres: '74'
+    date: 1498760225334,
+    miles: '700',
+    litres: '50',
+    totalmpg: '62.30'
   },
   {
     id: 2,
-    miles: '350',
-    litres: '44'
+    date: 1498760225334,
+    miles: '360',
+    litres: '47',
+    totalmpg: '34.09'
   }
 ]
 
@@ -23,8 +27,10 @@ export const resolvers: {} = {
     addMpg: (root, args) => {
       const newMpg = {
         id: nextId++,
+        date: args.date,
         miles: args.miles,
-        litres: args.litres
+        litres: args.litres,
+        totalmpg: args.totalmpg
       }
       mpg.push(newMpg)
       return newMpg

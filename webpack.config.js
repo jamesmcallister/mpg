@@ -1,7 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CheckerPlugin } = require('awesome-typescript-loader')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const { CheckerPlugin } = require('awesome-typescript-loader')
 module.exports = {
-  entry: './frontend/index.tsx',
+  entry: './frontend/index.js',
   output: {
     filename: 'bundle.js',
     path: __dirname + '/built/frontend'
@@ -17,17 +18,37 @@ module.exports = {
 
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2016']
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'awesome-typescript-loader'
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        loader: 'style-loader!css-loader!postcss-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'source-map-loader'
+      }
     ]
   },
   plugins: [
-    new CheckerPlugin(),
     new HtmlWebpackPlugin({
-      title: 'MPG'
-    })
+      filename: 'index.html',
+      template: './frontend/index.html'
+    }),
+    new CopyWebpackPlugin([{ from: './frontend/server.js', to: './server.js' }])
   ]
 }
